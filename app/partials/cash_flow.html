@@ -1,0 +1,10 @@
+<div ng-controller='cashFlow'>
+  <h3>Cash Flow</h3>
+    <form>
+      <label for="income">Income</label>
+      <input id='income' name="income" ng-model='data.income' ng-change='CFcalculate()' > <br>
+      <label for="expenses">Expenses</label>
+      <input id='expenses' name="expenses" ng-model='data.expenses' ng-change='CFcalculate()'> <br>
+      <label>Cash Flow</label> {{data.cashFlow}}
+    </form>
+</div>

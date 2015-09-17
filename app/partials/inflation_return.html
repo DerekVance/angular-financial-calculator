@@ -1,0 +1,8 @@
+<div ng-controller='inflationAdjReturn'>
+  <h3>Inflation-Adjusted Return</h3>
+  <form>
+    <label for='return'>Investment Reurn</label> <input id='return' name="name" ng-change='inCalculate()'ng-model='data.invRet'>% <br>
+    <label for='inflation'>Inflation</label> <input id='inflation' name="name" ng-change='inCalculate()' ng-model='data.inf'>% <br>
+    <label>Real Return</label> {{data.return}}
+  </form>
+</div>

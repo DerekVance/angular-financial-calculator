@@ -1,0 +1,8 @@
+<div ng-controller='gainLoss'>
+  <h3>Percent Increase or Loss</h3>
+    <form>
+      <label for="market">Market Price</label> <input id='market' name="market" ng-model='data.market' ng-change='MKcalculate()' > <br>
+      <label for="purchase">Purchase Price</label> <input id='purchase' name="purchase" ng-model='data.purchase' ng-change='MKcalculate()' > <br>
+      <label>Yield  </label> {{data.percent}}% {{data.growth}}
+     </form>
+</div>
