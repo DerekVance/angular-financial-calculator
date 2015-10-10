@@ -1,4 +1,7 @@
 node_modules
 app/bower_components
 app/.divshot-cache
-divshot.json
+app/divshot.json
+app/.divshot-cache/deploy
+calculator-info
+npm-debug.log
