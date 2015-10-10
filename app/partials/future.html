@@ -1,19 +1,55 @@
-<div ng-controller="future">
+<div ng-controller="future" id='calculator' class="animated bounceInDown">
   <h3>Future Value of Money</h3>
-    <form>
-      <label for='present'>Present Value</label>
-      <input id='present' name="present" ng-change='FVcalculate()' ng-model="data.present" > <br>
-      <label for='years'>Years</label>
-      <input id='years' name="years" ng-change='FVcalculate()' ng-model='data.years' > <br>
-      <label for='compound'>Compound Type</label>
-      <select  id='compound' name='compound' ng-model='data.compound' ng-change='FVcalculate()' >
-        <option value="">Please Select Compound Type</option>
-        <option value=1>Anually</option>
-        <option value=2>Semianually</option>
-        <option value=4>Quarterly</option>
-        <option value=12>Monthly</option>
-      </select> <br>
-      <label for='iRate'>Interest Rate</label> <input id='iRate' name="rate" ng-change='FVcalculate()' ng-model='data.rate' >% <br>
-      <label>Future Value</label> {{ data.futureValue }}
-    </form>
+  <form>
+    <label for='present'>Present Value</label>
+    <div class="input-row">
+      <div class="currency_row short">
+        $
+      </div>
+      <div class="currency_row">
+        <input  id='present' name="present" ng-change='FVcalculate()' ng-model="data.present" >
+      </div>
+    </div>
+    <label for='years'>Years</label>
+    <div class="input-row">
+      <div class="currency_row short">
+
+      </div>
+      <div class="currency_row">
+        <input  id='years' name="years" ng-change='FVcalculate()' ng-model='data.years' >
+      </div>
+    </div>
+    <label for='compound'>Compound Type</label>
+    <div class="input-row">
+      <div class="currency_row short">
+
+      </div>
+      <div class="currency_row">
+        <select  class='select' id='compound' name='compound' ng-model='data.compound' ng-change='FVcalculate()' >
+          <option value="">Please Select Compound Type</option>
+          <option value=1>Anually</option>
+          <option value=2>Semianually</option>
+          <option value=4>Quarterly</option>
+          <option value=12>Monthly</option>
+        </select>
+      </div>
+    </div>
+    <label for='iRate'>Interest Rate</label>
+    <div class="input-row">
+      <div class="currency_row short">
+
+      </div>
+      <div class="currency_row">
+        <input  id='iRate' name="rate" ng-change='FVcalculate()' ng-model='data.rate'--->
+        <div class="currency_row short">
+          %
+        </div>
+      </div>
+    </div>
+    <label>Future Value</label> {{ data.futureValue }}
+  </form>
+  <a ui-sref=".des_future" ng-click="showModal()" id="trigger" class='fa fa-info-circle fa-lg btn btn-info'></a>
+  <div ng-show="showDescription">
+    <div ui-view></div>
+  </div>
 </div>

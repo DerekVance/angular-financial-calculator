@@ -1,8 +1,28 @@
-<div ng-controller='gainLoss'>
+<div ng-controller='gainLoss' id='calculator' class="animated bounceInDown">
   <h3>Percent Increase or Loss</h3>
-    <form>
-      <label for="market">Market Price</label> <input id='market' name="market" ng-model='data.market' ng-change='MKcalculate()' > <br>
-      <label for="purchase">Purchase Price</label> <input id='purchase' name="purchase" ng-model='data.purchase' ng-change='MKcalculate()' > <br>
-      <label>Yield  </label> {{data.percent}}% {{data.growth}}
-     </form>
+  <form>
+    <label for="market">Market Price</label>
+    <div class="input-row">
+      <div class="currency_row short">
+        $
+      </div>
+      <div class="currency_row">
+        <input id='market' name="market" ng-model='data.market' ng-change='MKcalculate()' >
+      </div>
+    </div>
+    <label for="purchase">Purchase Price</label>
+    <div class="input-row">
+      <div class="currency_row short">
+        $
+      </div>
+      <div class="currency_row">
+        <input id='purchase' name="purchase" ng-model='data.purchase' ng-change='MKcalculate()' >
+      </div>
+    </div>
+    <label>Yield  </label> {{data.percent}}% {{data.growth}}
+  </form>
+  <a ui-sref=".des_gain" ng-click="showModal()" id="trigger"  class='fa fa-info-circle fa-lg btn btn-info'></a>
+  <div ng-show="showDescription">
+    <div ui-view></div>
+  </div>
 </div>

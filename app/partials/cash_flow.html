@@ -1,10 +1,32 @@
-<div ng-controller='cashFlow'>
+<div ng-controller='cashFlow' id='calculator' class="animated bounceInDown">
   <h3>Cash Flow</h3>
-    <form>
-      <label for="income">Income</label>
-      <input id='income' name="income" ng-model='data.income' ng-change='CFcalculate()' > <br>
-      <label for="expenses">Expenses</label>
-      <input id='expenses' name="expenses" ng-model='data.expenses' ng-change='CFcalculate()'> <br>
-      <label>Cash Flow</label> {{data.cashFlow}}
-    </form>
+
+  <form>
+    <label for="income">Income</label>
+    <div class="input-row">
+      <div class="currency_row short">
+        $
+      </div>
+      <div class="currency_row">
+        <input id='income' class='form-input' name="income" ng-model='data.income' ng-change='CFcalculate()' >
+      </div>
+    </div>
+    <label for="expenses">Expenses</label>
+    <div class="input-row">
+      <div class="currency_row short">
+        $
+      </div>
+      <div class="currency_row">
+        <input id='expenses' name="expenses" ng-model='data.expenses' ng-change='CFcalculate()'>
+      </div>
+    </div>
+    <h4>Available Capital</h4> {{data.cashFlow}}
+  </form>
+
+  <a ui-sref=".des_cash" ng-click="showModal()" id="trigger" class='fa fa-info-circle fa-lg btn btn-info'></a>
+
+  <div ng-show="showDescription" >
+    <div ui-view></div>
+  </div>
+
 </div>

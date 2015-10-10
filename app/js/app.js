@@ -1,36 +1,58 @@
-var app = angular.module("moneyValue", ['ngRoute', 'ngAnimate'])
+var app = angular.module("moneyValue", ['ui.router']);
 
-app.config([
-  '$routeProvider',
-  function($routeProvider){
-    // $locationProvider.hashPrefix('!');
+app.config(function($stateProvider){
+
   // Routes
-    $routeProvider
-    .when('/cash_flow', {
+    $stateProvider
+    .state('cash_flow', {
+      url:'/cash-flow',
       templateUrl: './partials/cash_flow.html',
       controller: 'cashFlow'
     })
-    .when('/future', {
+    .state('cash_flow.des_cash', {
+      url:'/info-cash-flow',
+      templateUrl: './partials/des_cash.html'
+    })
+    .state('future', {
+      url:'/future',
       templateUrl: './partials/future.html',
       controller: 'future'
     })
-    .when('/double', {
-      templateUrl: './partials/double.html',
+    .state('future.des_future', {
+      url: '/info-future',
+      templateUrl: './partials/des_future'
+    })
+    .state('double', {
+      url:'/double',
+      templateUrl: './partials/double',
       controller: 'timeTilDouble'
     })
-    .when('/gain_loss', {
-      templateUrl: './partials/gain_loss.html',
+    .state('double.des_double', {
+      url: '/info-double',
+      templateUrl: './partials/des_double'
+    })
+    .state('gain_loss', {
+      url:'/gain-loss',
+      templateUrl: './partials/gain_loss',
       controller: 'gainLoss'
     })
-    .when('/inflation_return', {
-      templateUrl: './partials/inflation_return.html',
+    .state('gain_loss.des_gain', {
+      url:'/info-gain',
+      templateUrl: './partials/des_gain'
+    })
+    .state('inflation_return', {
+      url:'/inflation-return',
+      templateUrl: './partials/inflation_return',
       controller: 'inflationAdjReturn'
     })
-    .when('/', {
-      templateUrl: './partials/welcome.html'
+    .state('inflation_return.des_inflation', {
+      url:'/info-inflation',
+      templateUrl: './partials/des_inflation'
     })
-    .otherwise({
-      redirectTo: '/'
+    .state('home', {
+      url:'/',
+      templateUrl: './partials/welcome'
     });
-  }
-]);
+
+
+});

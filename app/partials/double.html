@@ -1,7 +1,25 @@
-<div ng-controller='timeTilDouble'>
+<div ng-controller='timeTilDouble' id='calculator' class="animated bounceInDown">
   <h3>Time to Double Investment</h3>
-    <form>
-      <label for="interestRate"> Interest Rate of Investment</label> <input id='interestRate' name="interestRate" ng-model='data.int' ng-change='DIcalculate()'>% <br>
-      <label>Years to Double Investment</label> {{data.year}}
-    </form>
+
+  <form>
+    <label for="interestRate"> Interest Rate of Investment</label>
+    <div class="input-row">
+      <div class="currency_row short">
+
+      </div>
+      <div class="currency_row">
+        <input id='interestRate' name="interestRate" ng-model='data.int' ng-change='DIcalculate()'>
+        <div class="currency_row short">
+          %
+        </div>
+      </div>
+    </div>
+    <label>Years to Double Investment</label> {{data.year}}
+  </form>
+
+<a ui-sref=".des_double" ng-click="showModal()" id="trigger"  class='fa fa-info-circle fa-lg btn btn-info'></a>
+
+<div ng-show="showDescription">
+  <div ui-view></div>
+</div>
 </div>
