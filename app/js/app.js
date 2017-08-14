@@ -22,6 +22,15 @@ app.config(function($stateProvider){
       url: '/info-future',
       templateUrl: './partials/des_future'
     })
+    .state('present', {
+      url: '/present',
+      templateUrl: './partials/present',
+      controller: 'present'
+    })
+    .state('present.des_present', {
+      url: '/info-present',
+      templateUrl: './partials/des_present'
+    })
     .state('double', {
       url:'/double',
       templateUrl: './partials/double',

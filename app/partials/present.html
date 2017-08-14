@@ -1,13 +1,13 @@
 <div ng-controller="present" id='calculator' class="animated bounceInDown">
   <h3>Present Value of Money</h3>
   <form>
-    <label for='present'>Present Value</label>
+    <label for='present'>Future Value</label>
     <div class="input-row">
       <div class="currency_row short">
         $
       </div>
       <div class="currency_row">
-        <input  id='present' name="present" ng-change='PVcalculate()' ng-model="data.present" >
+        <input  id='future' name="future" ng-change='PVcalculate()' ng-model="data.future" >
       </div>
     </div>
     <label for='years'>Years</label>
